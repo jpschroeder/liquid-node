@@ -6,3 +6,6 @@ module.exports = class Liquid.BlankFileSystem
 
   readTemplateFile: (templatePath) ->
     Promise.reject new Liquid.FileSystemError "This file system doesn't allow includes"
+
+  readSectionFile: (sectionPath) ->
+    Promise.reject new Liquid.FileSystemError "This file system doesn't allow sections"
