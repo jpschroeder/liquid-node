@@ -17,8 +17,8 @@ Promise_each = (promises, cb) ->
 module.exports = class Block extends Liquid.Tag
   @IsTag             = ///^#{Liquid.TagStart.source}///
   @IsVariable        = ///^#{Liquid.VariableStart.source}///
-  @FullToken         = ///^#{Liquid.TagStart.source}\s*(\w+)\s*(.*)?#{Liquid.TagEnd.source}$///
-  @ContentOfVariable = ///^#{Liquid.VariableStart.source}(.*)#{Liquid.VariableEnd.source}$///
+  @FullToken         = ///^#{Liquid.TagStart.source}-?\s*(\w+)\s*(.*)?#{Liquid.TagEnd.source}$///
+  @ContentOfVariable = ///^#{Liquid.VariableStart.source}-?(.*)#{Liquid.VariableEnd.source}$///
 
   beforeParse: ->
     @nodelist ?= []
